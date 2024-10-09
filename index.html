@@ -9,7 +9,96 @@
 
 <body>
     <script>
-        console.log("hello world")
+        let humanScore = 0, computerScore = 0;
+        function getComputerChoice() {
+            let choice = Math.floor(Math.random() * 3);
+
+            if (choice == 0) {
+                return "rock"
+            }
+            else if (choice == 1) {
+                return "paper"
+            }
+            else {
+                return "scissors"
+            }
+        }
+
+        function getHumanChoice() {
+            choice = prompt("Rock, Paper, or Scissors?")
+            choice = choice.toLowerCase()
+            return choice
+        }
+
+
+        function playGame() {
+            let humanScore = 0, computerScore = 0;
+
+            let playRound = function (humanChoice, computerChoice) {
+                let winner = "";
+                if (humanChoice == computerChoice) {
+                    winner = "none"
+                }
+
+                else if (humanChoice == "rock") {
+                    if (computerChoice == "paper") {
+                        winner = "computer"
+                    }
+                    else {
+                        winner = "human"
+                    }
+                }
+                else if (humanChoice == "paper") {
+                    if (computerChoice == "scissors") {
+                        winner = "computer"
+                    }
+                    else {
+                        winner = "human"
+                    }
+                }
+                else {
+                    if (computerChoice == "rock") {
+                        winner = "computer"
+                    }
+                    else {
+                        winner = "human"
+                    }
+                }
+
+                if (winner == "computer") {
+                    console.log(computerChoice + " beats " + humanChoice + ", you lose!")
+                    computerScore++
+                }
+                else if (winner == "human") {
+                    console.log(humanChoice + " beats " + computerChoice + ", you win!")
+                    humanScore++
+                }
+                else {
+                    console.log(humanChoice + " and " + computerChoice + " are the same!")
+                }
+
+
+            }
+
+            for (let i = 1; i <= 5; i++) {
+                const humanSelection = getHumanChoice();
+                const computerSelection = getComputerChoice();
+
+                playRound(humanSelection, computerSelection);
+            }
+            if (humanScore > computerScore) {
+                alert("YOU WIN!!")
+            }
+            else if (humanScore < computerScore) {
+                alert("you lose.")
+            }
+            else {
+                alert("It's a draw!")
+            }
+        }
+
+        playGame()
+
     </script>
 
 </body>
