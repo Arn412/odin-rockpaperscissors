@@ -4,102 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock, Paper, Scissors!</title>
+
+    <title>Rock Paper Scisssors</title>
+    <link href="style.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <script>
-        let humanScore = 0, computerScore = 0;
-        function getComputerChoice() {
-            let choice = Math.floor(Math.random() * 3);
 
-            if (choice == 0) {
-                return "rock"
-            }
-            else if (choice == 1) {
-                return "paper"
-            }
-            else {
-                return "scissors"
-            }
-        }
+    <h1 id="title">Welcome to Rock, Paper, Scissors!</h1>
+    <div id="scores">
+        <div>
+            <h2>Human Score</h2>
+            <h3 id="humanscoredisplay"></h3>
+        </div>
+        <div>
+            <h2>Computer score</h2>
+            <h3 id="computerscoredisplay"></h3>
+        </div>
+    </div>
+    <div id="buttons">
+        <button class="rock-button">Rock</button>
+        <button class="paper-button">Paper</button>
+        <button class="scissors-button">Scissors</button>
+    </div>
 
-        function getHumanChoice() {
-            choice = prompt("Rock, Paper, or Scissors?")
-            choice = choice.toLowerCase()
-            return choice
-        }
+    <div id="result" style="text-align: center;">
+    </div>
 
-
-        function playGame() {
-            let humanScore = 0, computerScore = 0;
-
-            let playRound = function (humanChoice, computerChoice) {
-                let winner = "";
-                if (humanChoice == computerChoice) {
-                    winner = "none"
-                }
-
-                else if (humanChoice == "rock") {
-                    if (computerChoice == "paper") {
-                        winner = "computer"
-                    }
-                    else {
-                        winner = "human"
-                    }
-                }
-                else if (humanChoice == "paper") {
-                    if (computerChoice == "scissors") {
-                        winner = "computer"
-                    }
-                    else {
-                        winner = "human"
-                    }
-                }
-                else {
-                    if (computerChoice == "rock") {
-                        winner = "computer"
-                    }
-                    else {
-                        winner = "human"
-                    }
-                }
-
-                if (winner == "computer") {
-                    console.log(computerChoice + " beats " + humanChoice + ", you lose!")
-                    computerScore++
-                }
-                else if (winner == "human") {
-                    console.log(humanChoice + " beats " + computerChoice + ", you win!")
-                    humanScore++
-                }
-                else {
-                    console.log(humanChoice + " and " + computerChoice + " are the same!")
-                }
+    <div id="winner" style="text-align: center;">
+    </div>
 
 
-            }
-
-            for (let i = 1; i <= 5; i++) {
-                const humanSelection = getHumanChoice();
-                const computerSelection = getComputerChoice();
-
-                playRound(humanSelection, computerSelection);
-            }
-            if (humanScore > computerScore) {
-                alert("YOU WIN!!")
-            }
-            else if (humanScore < computerScore) {
-                alert("you lose.")
-            }
-            else {
-                alert("It's a draw!")
-            }
-        }
-
-        playGame()
-
-    </script>
+    <script src="script.js"> </script>
 
 </body>
 
