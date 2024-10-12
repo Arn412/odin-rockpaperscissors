@@ -26,4 +26,14 @@ body {
     justify-content: center;
     justify-content: space-around;
     margin-top: 33px;
+    margin-bottom: 30px;
+}
+
+
+.rock-button,
+.paper-button,
+.scissors-button {
+    width: 88px;
+    height: 60px;
+    border-radius: 12px;
 }
