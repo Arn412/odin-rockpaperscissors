@@ -1,4 +1,29 @@
 body {
     display: flex;
     flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#title {
+    display: flex;
+    background-color: rgb(205, 190, 190);
+    font-size: 44px;
+    justify-content: center;
+    padding: 40px;
+
+}
+
+#scores {
+    display: flex;
+    justify-content: space-around;
+    background-color: red;
+    color: aliceblue;
+}
+
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    margin-top: 33px;
 }
